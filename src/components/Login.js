@@ -45,27 +45,7 @@ const Login = () => {
 
     form.current.validateAll();
 
-    if (checkBtn.current.context._errors.length === 0) {
-      AuthService.login(username, password).then(
-        () => {
-          navigate("/profile");
-          window.location.reload();
-        },
-        (error) => {
-          const resMessage =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString();
-
-          setLoading(false);
-          setMessage(resMessage);
-        }
-      );
-    } else {
-      setLoading(false);
-    }
+    
   };
 
   return (
